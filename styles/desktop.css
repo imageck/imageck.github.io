@@ -1,0 +1,343 @@
+:root {
+  --main-color: #8430ab;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+#top3 figure,
+figcaption > p,
+footer > p {
+  margin: 0;
+}
+
+header {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid var(--main-color);
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  margin-top: 1.5em;
+  padding-left: 1.5em;
+  font-family: "Andika", sans-serif;
+  text-transform: lowercase;
+  letter-spacing: .05em;
+  word-spacing: .2em;
+}
+
+header > nav > ul {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+}
+
+header > nav > ul > li {
+  display: flex;
+}
+
+.button {
+  height: 100%;
+  padding: 0 2em;
+  margin: 0 1em;
+  font-family: "Andika", serif;
+  color: initial;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+.button:hover {
+  background-color: var(--main-color);
+  color: #fff;
+  transition: color, background-color .4s;
+}
+
+.button:active {
+  background-color: #5e1682;
+}
+
+#logo {
+  margin: 0;
+  padding: 0 1em;
+  font-family: "Bree Serif", serif;
+}
+
+#contacts_button[open] > summary::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: 8px solid #fff;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  position: absolute;
+  top: 44px;
+}
+
+#contacts_button[open] > summary {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+#contacts {
+  border-radius: 0 0 10px 10px;
+  background-color: #fff;
+  padding: 2px 6px;
+  margin: 2px 0;
+  position: absolute;
+  box-shadow: 0px 1px 4px var(--main-color);
+}
+
+#contacts a {
+  font-family: "Andika", sans-serif;
+}
+
+#contacts > ol {
+  padding: .5em 1em;
+}
+
+#contacts > ol > li {
+  font-style: normal;
+  line-height: 1.5em;
+  list-style-position: inside;
+}
+
+#contacts > ol > li:nth-child(1) {
+  list-style-type: "📱 ";
+}
+
+#contacts > ol > li:nth-child(2) {
+  list-style-type: "📧 ";
+}
+
+#top3 {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  margin: 0 2vw;
+}
+
+#top3 ol {
+  min-height: 0;
+  flex: 0 1 100%;
+  overflow: clip;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+#top3 li {
+  list-style-type: none;
+  overflow: clip;
+  width: 25%;
+  flex: 1 0 25%;
+  transition: flex .4s;
+}
+
+#top3 li:nth-child(2) {
+  order: -1;
+}
+
+#top3 li:hover {
+  flex: 1 0 50%;
+}
+
+#top3:not(:hover) li:first-child {
+  flex: 1 0 50%;
+}
+
+#top3 figure {
+  height: 100%;
+}
+
+#top3 img {
+  max-height: 100%;
+  object-fit: cover;
+}
+
+#top3 figcaption {
+  font-family: "Crimson Text", serif;
+  font-size: 18px;
+  color: #fff;
+  background-color: rgba(0,0,0,.6);
+  position: relative;
+  bottom: 35px;
+  height: 31px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: height, bottom .4s;
+}
+
+#top3 figcaption > p {
+  display: none;
+}
+
+#top3 li:hover figcaption {
+  bottom: calc(100% + 4px);
+  height: 100%;
+  justify-content: end;
+}
+
+#top3 li:hover figcaption > p {
+  display: block;
+  flex-grow: 1;
+  max-height: 100%;
+  text-align: center;
+  padding: 50px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0 2.2em;
+}
+
+#menubox {
+  box-shadow: 0 0 4px var(--main-color);
+  border-radius: 15px;
+}
+
+main > #menubox > menu {
+  margin: 0;
+  padding: 0 10em;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid var(--main-color);
+}
+
+main li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu {
+  background-image: url("../menu-bg.jpg");
+  background-size: 100%;
+  border-radius: 0 0 15px 15px;
+  display: flex;
+}
+
+#meals > menu,
+#salads > menu,
+#breakfasts > menu,
+#desserts > menu {
+  margin: 0 .4em;
+  padding: 0;
+}
+
+#dishes li {
+  margin: .7em;
+}
+
+#dishes a {
+  padding: 0 1em;
+  font-family: "Almendra Display", serif;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: initial;
+  text-decoration: none;
+  letter-spacing: .1em;
+  word-spacing: .5em;
+  height: 100%;
+  width: 100%;
+  transition: box-shadow .4s;
+}
+
+#dishes a:hover {
+  border-radius: 6px;
+  box-shadow: 0px 0px 4px var(--main-color);
+}
+
+#dishes, #descriptions {
+  flex: 1 0 50%;
+  margin: 0;
+  padding: 0;
+}
+
+menu > li {
+  line-height: 3.1em;
+}
+
+#salads, #breakfasts, #desserts {
+  display: none;
+}
+
+#descriptions {
+  text-align: center;
+}
+
+#descriptions > article {
+  font-family: "Crimson Text", serif;
+  font-size: 18px;
+  background-color: rgba(0,0,0,.4);
+  border-bottom-right-radius: 15px;
+  display: none;
+  padding: 3em 2em 0;
+}
+
+/* CSS !programming language but this is the best I can do
+ * until I learn JavaScript */
+#salads:target ~ #meals,
+#breakfasts:target ~ #meals,
+#desserts:target ~ #meals {
+  display: none;
+}
+
+#dishes > div:target,
+#descriptions > article:target {
+  display: block;
+  color: #fff;
+  height: 100%;
+}
+
+footer {
+  line-height: 2em;
+  margin: 50px 2vw 0;
+  text-align: center;
+}
+
+footer > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer > ul > li {
+  display: inline-block;
+  font: 0.9em "Crimson Text";
+  margin: 0;
+  padding: 0 .6em;
+}
+
+footer > ul > li:not(:last-child) {
+  border-right: 1px solid black;
+}

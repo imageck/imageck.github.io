@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang=en>
+ <head>
+  <title>Em's</title>
+  <meta charset=utf-8>
+  <meta name=author content="Akbarkhon Variskhanov">
+  <meta name=description content="Em's food & delivery. Skim the menu, choose your meal and order via Telegram.">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <link rel=stylesheet
+        href="https://fonts.googleapis.com/css2?family=Bree+Serif&text=em%27s">
+  <link rel=stylesheet
+        href="https://fonts.googleapis.com/css2?family=Andika">
+  <link rel=stylesheet
+        href="https://fonts.googleapis.com/css2?family=Crimson+Text">
+  <link rel=stylesheet
+        href="https://fonts.googleapis.com/css2?family=Almendra+Display">
+  <link media="(max-width: 700px)"
+        rel=stylesheet
+        type=text/css
+        href=styles/mobile.css>
+  <link media="(min-width: 701px)"
+        rel=stylesheet
+        type=text/css
+        href=styles/desktop.css>
+ </head>
+ <body>
+  <header>
+   <h1><a id=logo class=button>Em's</a></h1>
+   <nav>
+    <ul>
+     <li><a class=button href=#menu>Menu</a></li>
+     <li>
+      <details id=contacts_button onmouseenter="click(this)">
+       <summary class=button>Contacts</summary>
+       <address id=contacts>
+        <ol>
+         <li><a href="tel:+1-201-555-0123">+1-201-555-0123</a></li>
+         <li><a href="mailto:johndoe@example.com">johndoe@example.com</a></li>
+        </ol>
+       </address>
+      </details>
+     </li>
+     <li><a class=button href=#>Order</a></li>
+    </ul>
+   </nav>
+  </header>
+  <div id=top3>
+   <h2>Crowd favorites</h2>
+   <ol>
+    <li><figure>
+      <img
+        srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Pizza_with_tomatoes.jpg/512px-Pizza_with_tomatoes.jpg 512w, https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Pizza_with_tomatoes.jpg/1024px-Pizza_with_tomatoes.jpg 1024w"
+        sizes="(max-width: 700px) 512px, 1024px"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Pizza_with_tomatoes.jpg/1024px-Pizza_with_tomatoes.jpg"
+        alt="Pizza with tomatoes">
+     <figcaption>
+      <p>Pizza Margherita (more commonly known in English as Margherita pizza) is a typical Neapolitan pizza, made with San Marzano tomatoes, mozzarella cheese, fresh basil, salt, and extra-virgin olive oil.</p>
+      Pizza Margherita
+     </figcaption>
+    </figure></li>
+    <li><figure>
+      <img
+        srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Asado_Bogotano.jpg/512px-Asado_Bogotano.jpg 512w, https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Asado_Bogotano.jpg/1024px-Asado_Bogotano.jpg 1024w"
+        sizes="(max-width: 700px) 512px, 1024px"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Asado_Bogotano.jpg/1024px-Asado_Bogotano.jpg"
+        alt="Asado Bogotano">
+     <figcaption>
+      <p>Asado (Spanish: [aˈsaðo]) is the technique and the social event of having or attending a barbecue in various South American countries, especially Argentina, Chile, Paraguay and Uruguay where it is also a traditional event. An asado usually consists of beef, pork, chicken, chorizo, and morcilla which are cooked on a grill, called a parrilla, or an open fire. Generally the meats are accompanied by red wine and salads. This meat is prepared by a person who is the assigned asador or parrillero.</p> 
+      Asado
+     </figcaption>
+    </figure></li>
+    <li><figure>
+      <img
+        srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Mondays_at_Il_Forno_-_cheesecake_with_sauce.jpg/512px-Mondays_at_Il_Forno_-_cheesecake_with_sauce.jpg 512w, https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Mondays_at_Il_Forno_-_cheesecake_with_sauce.jpg/1024px-Mondays_at_Il_Forno_-_cheesecake_with_sauce.jpg 1024w"
+        sizes="(max-width: 700px) 512px, 1024px"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Mondays_at_Il_Forno_-_cheesecake_with_sauce.jpg/1024px-Mondays_at_Il_Forno_-_cheesecake_with_sauce.jpg"
+        alt="Mondays at Il Forno - cheesecake with sauce">
+     <figcaption>
+      <p>Cheesecake is a sweet dessert consisting of one or more layers. The main, and thickest, layer consists of a mixture of a soft, fresh cheese (typically cottage cheese, cream cheese or ricotta), eggs, and sugar. If there is a bottom layer, it most often consists of a crust or base made from crushed cookies (or digestive biscuits), graham crackers, pastry, or sometimes sponge cake. Cheesecake may be baked or unbaked (and is usually refrigerated).</p>
+      Cheesecake
+     </figcaption>
+    </figure></li>
+   </ol>
+  </div>
+  <main>
+   <h2 id=menu>Menu</h2>
+   <div id=menubox>
+    <menu>
+     <li><a href=#meals class=button>Meals</a></li>
+     <li><a href=#salads class=button>Salads</a></li>
+     <li><a href=#breakfasts class=button>Breakfast</a></li>
+     <li><a href=#desserts class=button>Desserts</a></li>
+    </menu>
+    <div class=menu> 
+     <div id=dishes>
+      <div id=salads>
+       <menu>
+        <li><a href=#salad-1>Salad 1</a></li>
+        <li><a href=#salad-2>Salad 2</a></li>
+        <li><a href=#salad-3>Salad 3</a></li>
+        <li><a href=#salad-4>Salad 4</a></li>
+        <li><a href=#salad-5>Salad 5</a></li>
+        <li><a href=#salad-6>Salad 6</a></li>
+        <li><a href=#salad-7>Salad 7</a></li>
+        <li><a href=#salad-8>Salad 8</a></li>
+        <li><a href=#salad-9>Salad 9</a></li>
+       </menu>
+      </div>
+      <div id=breakfasts>
+       <menu>
+        <li><a href=#breakfast-1>Breakfast 1</a></li>
+        <li><a href=#breakfast-2>Breakfast 2</a></li>
+        <li><a href=#breakfast-3>Breakfast 3</a></li>
+        <li><a href=#breakfast-4>Breakfast 4</a></li>
+        <li><a href=#breakfast-5>Breakfast 5</a></li>
+        <li><a href=#breakfast-6>Breakfast 6</a></li>
+        <li><a href=#breakfast-7>Breakfast 7</a></li>
+        <li><a href=#breakfast-8>Breakfast 8</a></li>
+        <li><a href=#breakfast-9>Breakfast 9</a></li>
+       </menu>
+      </div>
+      <div id=desserts>
+       <menu>
+        <li><a href=#dessert-1>Dessert 1</a></li>
+        <li><a href=#dessert-2>Dessert 2</a></li>
+        <li><a href=#dessert-3>Dessert 3</a></li>
+        <li><a href=#dessert-4>Dessert 4</a></li>
+        <li><a href=#dessert-5>Dessert 5</a></li>
+        <li><a href=#dessert-6>Dessert 6</a></li>
+        <li><a href=#dessert-7>Dessert 7</a></li>
+        <li><a href=#dessert-8>Dessert 8</a></li>
+        <li><a href=#dessert-9>Dessert 9</a></li>
+       </menu>
+      </div>
+      <div id=meals>
+       <menu>
+        <li><a href=#meal-1>Meal 1</a></li>
+        <li><a href=#meal-2>Meal 2</a></li>
+        <li><a href=#meal-3>Meal 3</a></li>
+        <li><a href=#meal-4>Meal 4</a></li>
+        <li><a href=#meal-5>Meal 5</a></li>
+        <li><a href=#meal-6>Meal 6</a></li>
+        <li><a href=#meal-7>Meal 7</a></li>
+        <li><a href=#meal-8>Meal 8</a></li>
+        <li><a href=#meal-9>Meal 9</a></li>
+       </menu>
+      </div>
+     </div>
+     <div id=descriptions>
+      <article id=salad-1>Description of salad-1</article>
+      <article id=salad-2>Description of salad-2</article>
+      <article id=salad-3>Description of salad-3</article>
+      <article id=salad-4>Description of salad-4</article>
+      <article id=salad-5>Description of salad-5</article>
+      <article id=salad-6>Description of salad-6</article>
+      <article id=salad-7>Description of salad-7</article>
+      <article id=salad-8>Description of salad-8</article>
+      <article id=salad-9>Description of salad-9</article>
+      <article id=breakfast-1>Description of breakfast-1</article>
+      <article id=breakfast-2>Description of breakfast-2</article>
+      <article id=breakfast-3>Description of breakfast-3</article>
+      <article id=breakfast-4>Description of breakfast-4</article>
+      <article id=breakfast-5>Description of breakfast-5</article>
+      <article id=breakfast-6>Description of breakfast-6</article>
+      <article id=breakfast-7>Description of breakfast-7</article>
+      <article id=breakfast-8>Description of breakfast-8</article>
+      <article id=breakfast-9>Description of breakfast-9</article>
+      <article id=dessert-1>Description of dessert-1</article>
+      <article id=dessert-2>Description of dessert-2</article>
+      <article id=dessert-3>Description of dessert-3</article>
+      <article id=dessert-4>Description of dessert-4</article>
+      <article id=dessert-5>Description of dessert-5</article>
+      <article id=dessert-6>Description of dessert-6</article>
+      <article id=dessert-7>Description of dessert-7</article>
+      <article id=dessert-8>Description of dessert-8</article>
+      <article id=dessert-9>Description of dessert-9</article>
+      <article id=meal-1>Description of meal-1</article>
+      <article id=meal-2>Description of meal-2</article>
+      <article id=meal-3>Description of meal-3</article>
+      <article id=meal-4>Description of meal-4</article>
+      <article id=meal-5>Description of meal-5</article>
+      <article id=meal-6>Description of meal-6</article>
+      <article id=meal-7>Description of meal-7</article>
+      <article id=meal-8>Description of meal-8</article>
+      <article id=meal-9>Description of meal-9</article>
+     </div>
+    </div>
+   </div>
+  </main>
+  <footer>
+   <ul>
+    <li><a href=credits.html>Attribution & Credits</a></li><li><a href="https://github.com/imageck/imageck.github.io">Source Code</a></li>
+   </ul>
+   <p><small>© 2023 Akbarkhon Variskhanov</small></p>
+  </footer>
+ </body>
+</html>

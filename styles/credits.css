@@ -1,0 +1,29 @@
+main {
+  font-size: 18px;
+}
+
+h2, h3 {
+  font-family: "Crimson Text", serif;
+}
+
+#mainbox {
+  border-radius: 15px;
+  box-shadow: 0 0 4px var(--main-color);
+  padding: 0 2em;
+}
+
+main li {
+  display: list-item;
+  list-style-type: circle;
+}
+
+#mainbox p,
+#mainbox a,
+#mainbox li {
+  font-size: 14px;
+  line-height: 1.9em;
+}
+
+footer {
+  margin-top: 0
+}
