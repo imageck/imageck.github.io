@@ -1,5 +1,5 @@
 :root {
-  --main-color: #8430ab;
+  --theme-color: #8430ab;
 }
 
 html {
@@ -11,6 +11,10 @@ html {
   box-sizing: inherit;
 }
 
+a {
+  outline: none;
+}
+
 body,
 h1,
 h2,
@@ -20,14 +24,11 @@ footer > p {
   margin: 0;
 }
 
-body {
-}
-
 header {
   height: 60px;
   display: flex;
   justify-content: center;
-  background-color: var(--main-color);
+  background-color: var(--theme-color);
 }
 
 h1 {
@@ -59,22 +60,23 @@ header > nav > ul {
   justify-content: space-between;
 }
 
-header > nav > ul > li:nth-child(2) {
+#contacts {
   display: none;
 }
 
-header > nav > ul > li {
+header > nav > ul > li,
+#menu > li {
   background: url("") center/40px no-repeat;
   display: flex;
   font-size: 0;
 }
 
 header > nav > ul > li:first-child {
-  background-image: url("../menu_64.png");
+  background-image: url("../icons/menu_64.png");
 }
 
 header > nav > ul > li:last-child {
-  background-image: url("../Logo.svg");
+  background-image: url("../icons/telegram.svg");
 }
 
 header ul a {
@@ -105,7 +107,7 @@ header ul a {
   font-family: "Bree Serif", serif;
 }
 
-#top3 > h2, #top3 > ol {
+#top3 > ol {
   margin: 0;
   padding: 0;
 }
@@ -186,95 +188,71 @@ header ul a {
 }
 
 main {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  margin: 0 2.2em;
 }
 
-#menubox {
-  box-shadow: 0 0 4px var(--main-color);
-  border-radius: 15px;
-}
-
-main > #menubox > menu {
+#menu {
   margin: 0;
-  padding: 0 10em;
+  padding: 0;
   display: flex;
   justify-content: space-around;
-  border-bottom: 2px solid var(--main-color);
+  align-items: center;
+  background-color: var(--theme-color);
+  flex: 0 1 60px;
 }
 
-main li {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+#menu > li {
+  background: url("") center/40px no-repeat;
   display: flex;
-}
-
-.menu {
-  background-image: url("../menu-bg.jpg");
-  background-size: 100%;
-  border-radius: 0 0 15px 15px;
-  display: flex;
-}
-
-#meals > menu,
-#salads > menu,
-#breakfasts > menu,
-#desserts > menu {
-  margin: 0 .4em;
-  padding: 0;
-}
-
-#dishes li {
-  margin: .7em;
-}
-
-#dishes a {
-  padding: 0 1em;
-  font-family: "Almendra Display", serif;
-  font-weight: bold;
-  font-size: 1.1em;
-  color: initial;
-  text-decoration: none;
-  letter-spacing: .1em;
-  word-spacing: .5em;
+  font-size: 0;
   height: 100%;
   width: 100%;
-  transition: box-shadow .4s;
 }
 
-#dishes a:hover {
-  border-radius: 6px;
-  box-shadow: 0px 0px 4px var(--main-color);
+#menu > li:nth-child(1) {
+  background-image: url("../icons/food_64_light.png");
 }
 
-#dishes, #descriptions {
-  flex: 1 0 50%;
+#menu > li:nth-child(2) {
+  background-image: url("../icons/salad_64_light.png");
+}
+
+#menu > li:nth-child(3) {
+  background-image: url("../icons/breakfast_64_light.png");
+}
+
+#menu > li:nth-child(4) {
+  background-image: url("../icons/cupcake_64_light.png");
+}
+
+#menu a {
+  height: 100%;
+  width: 50%;
+  margin: 0 auto;
+}
+
+#salads,
+#breakfasts,
+#desserts {
+  display: none;
+}
+
+#meals,
+#meals:target,
+#salads:target,
+#breakfasts:target,
+#desserts:target {
+  display: flex;
   margin: 0;
   padding: 0;
-}
-
-menu > li {
-  line-height: 3.1em;
-}
-
-#salads, #breakfasts, #desserts {
-  display: none;
-}
-
-#descriptions {
-  text-align: center;
-}
-
-#descriptions > article {
-  font-family: "Crimson Text", serif;
-  font-size: 18px;
-  background-color: rgba(0,0,0,.4);
-  border-bottom-right-radius: 15px;
-  display: none;
-  padding: 3em 2em 0;
+  flex-grow: 1;
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-padding: 20px;
+  scroll-snap-align: center;
 }
 
 #salads:target ~ #meals,
@@ -283,23 +261,74 @@ menu > li {
   display: none;
 }
 
-#dishes > div:target,
-#descriptions > article:target {
-  display: block;
-  color: #fff;
-  height: 100%;
+#meals > li,
+#salads > li,
+#breakfasts > li,
+#desserts > li {
+  display: inline-block;
+  flex: 1 0 75%;
+  margin: 20px;
+}
+
+main figure {
+  margin: 0;
+  padding: 0;
+  height: 60vh;
+  width: 100%;
+  border-radius: 0.5em;
+  box-shadow: 0 0 4px var(--theme-color);
+  overflow: clip;
+  display: flex;
+  flex-direction: column;
+  font-family: "Crimson Text", serif;
+}
+
+main img {
+  object-fit: cover;
+  width: 100%;
+  height: 80%;
+}
+
+main figcaption {
+  font-size: 22px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price {
+  margin: 0;
+  padding: 0;
+  align-self: end;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--theme-color);
+}
+
+.price::after {
+  font-size: 1.1rem;
+  margin: 0 0.8rem;
+  content: "UZS";
 }
 
 footer {
   line-height: 2em;
-  margin: 50px 2vw 0;
+  margin-top: 2em;
+  padding: 1.5em 0;
   text-align: center;
+  background-color: var(--theme-color);
 }
 
 footer > ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+footer a, footer {
+  color: #fff;
 }
 
 footer > ul > li {

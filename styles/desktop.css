@@ -1,5 +1,6 @@
 :root {
-  --main-color: #8430ab;
+  --theme-color: #8430ab;
+  font-family: "Crimson Text", serif;
 }
 
 html {
@@ -25,7 +26,7 @@ header {
   width: 100%;
   display: flex;
   justify-content: center;
-  border-bottom: 2px solid var(--main-color);
+  border-bottom: 2px solid var(--theme-color);
 }
 
 h1 {
@@ -69,7 +70,7 @@ header > nav > ul > li {
 }
 
 .button:hover {
-  background-color: var(--main-color);
+  background-color: var(--theme-color);
   color: #fff;
   transition: color, background-color .4s;
 }
@@ -97,38 +98,38 @@ header > nav > ul > li {
 }
 
 #contacts_button[open] > summary {
-  background-color: var(--main-color);
+  background-color: var(--theme-color);
   color: #fff;
 }
 
-#contacts {
+#contacts_button[open] > address {
   border-radius: 0 0 10px 10px;
   background-color: #fff;
   padding: 2px 6px;
   margin: 2px 0;
   position: absolute;
-  box-shadow: 0px 1px 4px var(--main-color);
+  box-shadow: 0px 1px 4px var(--theme-color);
 }
 
-#contacts a {
+#contacts_button[open] a {
   font-family: "Andika", sans-serif;
 }
 
-#contacts > ol {
+#contacts_button[open] ol {
   padding: .5em 1em;
 }
 
-#contacts > ol > li {
+#contacts_button ol > li {
   font-style: normal;
   line-height: 1.5em;
   list-style-position: inside;
 }
 
-#contacts > ol > li:nth-child(1) {
+#contacts_button ol > li:nth-child(1) {
   list-style-type: "📱 ";
 }
 
-#contacts > ol > li:nth-child(2) {
+#contacts_button ol > li:nth-child(2) {
   list-style-type: "📧 ";
 }
 
@@ -142,11 +143,10 @@ header > nav > ul > li {
 
 #top3 ol {
   min-height: 0;
-  flex: 0 1 100%;
+  flex: 0 1 512px;
   overflow: clip;
   margin: 0;
   padding: 0;
-  height: 100%;
   display: flex;
 }
 
@@ -215,93 +215,49 @@ header > nav > ul > li {
 main {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   margin: 0 2.2em;
 }
 
-#menubox {
-  box-shadow: 0 0 4px var(--main-color);
-  border-radius: 15px;
-}
-
-main > #menubox > menu {
+#menu {
   margin: 0;
   padding: 0 10em;
   display: flex;
   justify-content: space-around;
-  border-bottom: 2px solid var(--main-color);
+  border-bottom: 2px solid var(--theme-color);
 }
 
-main li {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.menu {
-  background-image: url("../menu-bg.jpg");
-  background-size: 100%;
-  border-radius: 0 0 15px 15px;
-  display: flex;
-}
-
-#meals > menu,
-#salads > menu,
-#breakfasts > menu,
-#desserts > menu {
-  margin: 0 .4em;
-  padding: 0;
-}
-
-#dishes li {
-  margin: .7em;
-}
-
-#dishes a {
-  padding: 0 1em;
-  font-family: "Almendra Display", serif;
-  font-weight: bold;
-  font-size: 1.1em;
-  color: initial;
-  text-decoration: none;
-  letter-spacing: .1em;
-  word-spacing: .5em;
-  height: 100%;
-  width: 100%;
-  transition: box-shadow .4s;
-}
-
-#dishes a:hover {
-  border-radius: 6px;
-  box-shadow: 0px 0px 4px var(--main-color);
-}
-
-#dishes, #descriptions {
-  flex: 1 0 50%;
-  margin: 0;
-  padding: 0;
-}
-
-menu > li {
-  line-height: 3.1em;
+#menu > li {
+  display: inline-block;
+  height: 60px;
 }
 
 #salads, #breakfasts, #desserts {
+  margin: 0;
+  padding: 0;
   display: none;
 }
 
-#descriptions {
-  text-align: center;
+#salads:target ~ #meals,
+#breakfasts:target ~ #meals,
+#desserts:target ~ #meals {
+  display: none;
 }
 
-#descriptions > article {
-  font-family: "Crimson Text", serif;
-  font-size: 18px;
-  background-color: rgba(0,0,0,.4);
-  border-bottom-right-radius: 15px;
-  display: none;
-  padding: 3em 2em 0;
+#meals {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3em;
+  padding: 3em;
+}
+
+#meals:target,
+#salads:target,
+#breakfasts:target,
+#desserts:target {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3em;
+  padding: 3em;
 }
 
 /* CSS !programming language but this is the best I can do
@@ -312,11 +268,53 @@ menu > li {
   display: none;
 }
 
-#dishes > div:target,
-#descriptions > article:target {
-  display: block;
-  color: #fff;
-  height: 100%;
+#meals > li,
+#salads > li,
+#breakfasts > li,
+#desserts > li {
+  display: inline-block;
+}
+
+main img {
+  object-fit: cover;
+  width: 100%;
+  height: 80%;
+}
+
+main figure {
+  margin: 0;
+  padding: 0;
+  height: 60vh;
+  width: 100%;
+  border-radius: 0.5em;
+  box-shadow: 0 0 4px var(--theme-color);
+  overflow: clip;
+  display: flex;
+  flex-direction: column;
+}
+
+main figcaption {
+  font-size: 22px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  font-size: 1.2em;
+  align-self: end;
+  color: var(--theme-color);
+}
+
+.price::after {
+  font-size: 0.5em;
+  margin: 0 0.5em;
+  content: "UZS";
 }
 
 footer {
